@@ -3,7 +3,7 @@ Shader "Unlit/Cel_Shader"
     Properties
     {
     [HDR]
-        _Colour ("Colour", Color) = (1,1,1,1)
+        _Colour ("Colour", Color) = (1,1,1,0.5)
         _MainTex ("Texture", 2D) = "white" {}
         
     [HDR]
@@ -120,5 +120,4 @@ Shader "Unlit/Cel_Shader"
         }
 
         UsePass "Legacy Shaders/VertexLit/SHADOWCASTER"
-    }
-}
+    }}
