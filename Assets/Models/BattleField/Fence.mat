@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Ground
-  m_Shader: {fileID: 4800000, guid: 98ce3a02f0227d244825708eb5234f62, type: 3}
+  m_Name: Fence
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -69,18 +69,18 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RimAmount: 0.808
-    - _RimThreshold: 0.221
+    - _RimAmount: 0.456
+    - _RimThreshold: 0.306
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _AmbientColour: {r: 0.8490566, g: 0.10806889, b: 0.01201493, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Colour: {r: 0.9245283, g: 0.3928986, b: 0.06541473, a: 0.5}
+    - _AmbientColour: {r: 0.764151, g: 0.15757559, b: 0.05406728, a: 1}
+    - _Color: {r: 0.7830189, g: 0.20852749, b: 0.09233712, a: 1}
+    - _Colour: {r: 0.6415094, g: 0.19777627, b: 0.057493754, a: 0.5}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RimColor: {r: 0.7924528, g: 0.21838175, b: 0.115877524, a: 1}
-    - _SpecularColor: {r: 1, g: 0.47533634, b: 0, a: 1}
+    - _RimColor: {r: 0.7830189, g: 0.12683694, b: 0.09233712, a: 1}
+    - _SpecularColor: {r: 1, g: 0.9075698, b: 0.8443396, a: 1}
   m_BuildTextureStacks: []
