@@ -7,11 +7,12 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Bush
-  m_Shader: {fileID: 4800000, guid: 98ce3a02f0227d244825708eb5234f62, type: 3}
-  m_ValidKeywords: []
+  m_Name: Tree_Leaves
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ValidKeywords:
+  - _EMISSION
   m_InvalidKeywords: []
-  m_LightmapFlags: 4
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -63,24 +64,24 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 0.153
     - _GlossyReflections: 1
-    - _Metallic: 0
+    - _Metallic: 0.035
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RimAmount: 0.463
-    - _RimThreshold: 0.221
+    - _RimAmount: 0.234
+    - _RimThreshold: 0.402
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _AmbientColour: {r: 0.1977294, g: 1, b: 0.0990566, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Colour: {r: 0, g: 0.87058824, b: 0.11372549, a: 0.5}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RimColor: {r: 0, g: 0.8117647, b: 0.16470589, a: 1}
-    - _SpecularColor: {r: 0, g: 1.621692, b: 0.26127258, a: 1}
+    - _AmbientColour: {r: 0.12703201, g: 0.8962264, b: 0.080322154, a: 1}
+    - _Color: {r: 0.109945595, g: 1, b: 0.051886797, a: 1}
+    - _Colour: {r: 0.123671845, g: 0.2830189, b: 0.10813458, a: 0.5}
+    - _EmissionColor: {r: 0.15841937, g: 0.3773585, b: 0.18472101, a: 1}
+    - _RimColor: {r: 0.12758099, g: 0.5754717, b: 0.14165562, a: 1}
+    - _SpecularColor: {r: 0.28345126, g: 1, b: 0.25, a: 1}
   m_BuildTextureStacks: []
