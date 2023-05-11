@@ -8,23 +8,11 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Ground
-<<<<<<< Updated upstream
   m_Shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
   m_ValidKeywords:
   - _NORMALMAP
-=======
-<<<<<<< HEAD
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ValidKeywords:
-  - _EMISSION
-=======
-  m_Shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
-  m_ValidKeywords:
-  - _NORMALMAP
->>>>>>> 292f44e8b22c64f88b9aad506662099ea9bba193
->>>>>>> Stashed changes
   m_InvalidKeywords: []
-  m_LightmapFlags: 2
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -55,18 +43,8 @@ Material:
         m_Offset: {x: 1, y: 1}
     - _MainTex:
         m_Texture: {fileID: 0}
-<<<<<<< Updated upstream
         m_Scale: {x: 1, y: 10}
         m_Offset: {x: 1, y: 1}
-=======
-<<<<<<< HEAD
-        m_Scale: {x: 11, y: 19.2}
-        m_Offset: {x: -3.57, y: 33.58}
-=======
-        m_Scale: {x: 1, y: 10}
-        m_Offset: {x: 1, y: 1}
->>>>>>> 292f44e8b22c64f88b9aad506662099ea9bba193
->>>>>>> Stashed changes
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -90,15 +68,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
-<<<<<<< Updated upstream
     - _Glossiness: 0.337
-=======
-<<<<<<< HEAD
-    - _Glossiness: 0.159
-=======
-    - _Glossiness: 0.337
->>>>>>> 292f44e8b22c64f88b9aad506662099ea9bba193
->>>>>>> Stashed changes
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
@@ -113,17 +83,9 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _AmbientColour: {r: 0.8490566, g: 0.10806889, b: 0.01201493, a: 1}
-<<<<<<< Updated upstream
     - _Color: {r: 0.49056602, g: 0.31614557, b: 0.14578141, a: 1}
-=======
-<<<<<<< HEAD
-    - _Color: {r: 1, g: 0.36770934, b: 0.015686274, a: 1}
-=======
-    - _Color: {r: 0.49056602, g: 0.31614557, b: 0.14578141, a: 1}
->>>>>>> 292f44e8b22c64f88b9aad506662099ea9bba193
->>>>>>> Stashed changes
     - _Colour: {r: 0.9245283, g: 0.3928986, b: 0.06541473, a: 0.5}
-    - _EmissionColor: {r: 1, g: 0.06914884, b: 0, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimColor: {r: 0.7924528, g: 0.21838175, b: 0.115877524, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _SpecularColor: {r: 1, g: 0.47533634, b: 0, a: 1}
