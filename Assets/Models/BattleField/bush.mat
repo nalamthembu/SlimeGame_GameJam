@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Green
+  m_Name: bush
   m_Shader: {fileID: 4800000, guid: 98ce3a02f0227d244825708eb5234f62, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -63,24 +63,24 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.13
+    - _Glossiness: 3.77
     - _GlossyReflections: 1
-    - _Metallic: 0.052
+    - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RimAmount: 0.253
-    - _RimThreshold: 0.319
+    - _RimAmount: 0.474
+    - _RimThreshold: 0.543
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _AmbientColour: {r: 0.10097313, g: 0.6415094, b: 0, a: 1}
-    - _Color: {r: 0.17723632, g: 1, b: 0, a: 1}
-    - _Colour: {r: 0.15850139, g: 1, b: 0, a: 1}
+    - _AmbientColour: {r: 0.011607577, g: 0.8962264, b: 0, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Colour: {r: 0.07735002, g: 1, b: 0, a: 0.5}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RimColor: {r: 0.5802392, g: 1, b: 0.4669811, a: 1}
-    - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
+    - _RimColor: {r: 0, g: 0.9150943, b: 0.23183982, a: 1}
+    - _SpecularColor: {r: 0, g: 0.972549, b: 0.21694225, a: 1}
   m_BuildTextureStacks: []

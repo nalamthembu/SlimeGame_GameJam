@@ -8,10 +8,11 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: rock
-  m_Shader: {fileID: 4800000, guid: 98ce3a02f0227d244825708eb5234f62, type: 3}
-  m_ValidKeywords: []
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ValidKeywords:
+  - _EMISSION
   m_InvalidKeywords: []
-  m_LightmapFlags: 4
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -63,9 +64,9 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.6
+    - _Glossiness: 0.171
     - _GlossyReflections: 1
-    - _Metallic: 0
+    - _Metallic: 0.176
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -78,9 +79,9 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _AmbientColour: {r: 0.2830189, g: 0.06274475, b: 0.06274475, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.4528302, g: 0.103682555, b: 0.05339978, a: 1}
     - _Colour: {r: 0.6226415, g: 0.27615035, b: 0.20265219, a: 0.5}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionColor: {r: 0.9716981, g: 0.16325492, b: 0, a: 1}
     - _RimColor: {r: 0.49056602, g: 0.1294647, b: 0.053221796, a: 1}
     - _SpecularColor: {r: 0.8679245, g: 0.75555056, b: 0.7328231, a: 1}
   m_BuildTextureStacks: []

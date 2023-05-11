@@ -1,11 +1,38 @@
 fileFormatVersion: 2
-guid: 5b007ddd2b628b44381f1d74e803536c
+guid: 8d3e7e54241b94e428e8d47edd61cba3
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable:
   - first:
-      74: 4781951162920444690
-    second: Armature|ArmatureAction
+      74: -8603125016824881586
+    second: Cylinder|ArmatureAction
+  - first:
+      74: -4064695155375320158
+    second: Cylinder|ArmatureAction.001
+  - first:
+      74: -88723805440604879
+    second: Cylinder|CylinderAction
+  - first:
+      74: -3359535933777067571
+    second: Cylinder|Plane.001Action
+  - first:
+      74: 7527616684482480536
+    second: Cylinder|Plane.001Action.001
+  - first:
+      74: 7735488383404512475
+    second: Plane.002|ArmatureAction
+  - first:
+      74: -3942696104804334004
+    second: Plane.002|ArmatureAction.001
+  - first:
+      74: -1545476422316536872
+    second: Plane.002|CylinderAction
+  - first:
+      74: 4910038636033323727
+    second: Plane.002|Plane.001Action
+  - first:
+      74: -4117909669941486248
+    second: Plane.002|Plane.001Action.001
   externalObjects: {}
   materials:
     materialImportMode: 2
