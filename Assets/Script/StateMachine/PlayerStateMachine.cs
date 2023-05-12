@@ -30,6 +30,11 @@ public class PlayerStateMachine : MonoBehaviour
     {
         if (Player.IsGrounded)
         {
+            if (Player.InputMagnitude <= 0)
+            {
+                DoSwitchState(PlayerStopState);
+            }
+
             if (currentState is PlayerFallState && Player.InputMagnitude > 0)
             {
                 if (Player.IsRunning)

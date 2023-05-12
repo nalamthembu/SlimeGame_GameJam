@@ -183,26 +183,7 @@ public class PlayerStopState : PlayerBaseState
 
     public override void CheckStateChange(PlayerStateMachine stateMachine)
     {
-        if (player.InputMagnitude > 0)
-        {
-            if (!player.IsRunning)
-            {
-                stateMachine.DoSwitchState(stateMachine.PlayerWalkState);
-                return;
-            }
-
-            if (player.IsRunning)
-            {
-                stateMachine.DoSwitchState(stateMachine.PlayerRunState);
-                return;
-            }
-        }
-
-        if (player.CurrentSpeed <= 0)
-        {
-            stateMachine.DoSwitchState(stateMachine.PlayerIdleState);
-            return;
-        }
+        stateMachine.DoStateCheck();
     }
 
     public override void EnterState(PlayerStateMachine stateMachine)
@@ -212,16 +193,29 @@ public class PlayerStopState : PlayerBaseState
 
     public override void ExitState(PlayerStateMachine stateMachine)
     {
-        if (player.CurrentSpeed > 0)
-        {
-            stateMachine.DoSwitchState(stateMachine.PlayerIdleState);
-        }
+        return;
     }
 
     public override void UpdateState(PlayerStateMachine stateMachine)
     {
-        player.TargetSpeed -= Time.deltaTime * 5F;
-        stateMachine.HandlePosition();
-        stateMachine.HandleRotation();
+        HandleStop();
+        stateMachine.DoStateCheck();
+    }
+
+    private void HandleStop()
+    {
+        float currentSpeed = player.CurrentSpeed;
+        float targetSpeed = 0;
+
+        player.CurrentSpeed = Mathf.SmoothDamp
+            (
+                currentSpeed,
+                targetSpeed,
+                ref player.m_SpeedSmoothVelocity,
+                player.GetModifiedSmoothTime(player.SpeedSmoothTime)
+            );
+
+        player.Velocity = (player.transform.forward * player.CurrentSpeed);
+        player.Controller.Move(player.Velocity * Time.deltaTime);
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(CharacterController))]
 [RequireComponent(typeof(PlayerStateMachine))]
 public class Player : Character
 {
@@ -53,7 +54,7 @@ public class Player : Character
     public float Gravity { get { return m_Gravity; } }
     public Vector3 Velocity { get { return m_Velocity; } set { m_Velocity = value; } }
     public Vector2 InputDir { get { return m_InputDir; } }
-    public Vector2 CameraPitchYaw { get { return new Vector2(m_CameraController.pitch, m_CameraController.yaw); } }
+    public Vector2 CameraPitchYaw { get { return new Vector2(m_CameraController.Pitch, m_CameraController.Yaw); } }
     public bool IsRU { get { return m_IsRU; } set { m_IsRU = value; } }
     public bool IsLU { get { return m_IsLU; } set { m_IsLU = value; } }
     public bool IsRotatingTowardTargetRot { get { return m_IsRotatingToTargetDirection; } set { m_IsRotatingToTargetDirection = value; } }
