@@ -46,6 +46,8 @@ public class PlayerJumpState : PlayerBaseState
     {
         player = stateMachine.Player;
 
+        player.VelocityY = 0;
+
         float g = player.Gravity;
         float h = player.JumpHeight;
 
@@ -63,9 +65,30 @@ public class PlayerJumpState : PlayerBaseState
 
     public override void UpdateState(PlayerStateMachine stateMachine)
     {
-        //Handle Movement  -> Do this is in the StateMachine
+        //Handle Movement  -> Do this here.
         //Handle Rotation -> Do this in stateMachine.
+        HandlePosition_DontResetVelocityY();
+        stateMachine.HandleRotation();
         CheckStateChange(stateMachine);
+    }
+
+    private void HandlePosition_DontResetVelocityY()
+    {
+
+        float currentSpeed = player.CurrentSpeed;
+        float targetSpeed = player.TargetSpeed;
+
+        player.CurrentSpeed = Mathf.SmoothDamp
+            (
+                currentSpeed,
+                targetSpeed,
+                ref player.m_SpeedSmoothVelocity,
+                player.GetModifiedSmoothTime(player.SpeedSmoothTime)
+            );
+
+        player.VelocityY += Time.deltaTime * player.Gravity;
+        player.Velocity = (player.transform.forward * player.CurrentSpeed) + Vector3.up * player.VelocityY;
+        player.Controller.Move(player.Velocity * Time.deltaTime);
     }
 }
 

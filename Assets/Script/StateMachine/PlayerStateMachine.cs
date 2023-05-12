@@ -35,17 +35,24 @@ public class PlayerStateMachine : MonoBehaviour
                 DoSwitchState(PlayerStopState);
             }
 
-            if (currentState is PlayerFallState && Player.InputMagnitude > 0)
+            if (Player.InputMagnitude > 0)
             {
-                if (Player.IsRunning)
-                    DoSwitchState(PlayerRunState);
 
-                if (!Player.IsRunning)
-                    DoSwitchState(PlayerWalkState);
-            }
+                if (currentState is PlayerLandState)
+                {
+                    if (Player.IsRunning)
+                        DoSwitchState(PlayerRunState);
 
-            if (Player.InputMagnitude != 0)
-            {
+                    if (!Player.IsRunning)
+                        DoSwitchState(PlayerWalkState);
+                }
+
+                if (Player.IsJumping)
+                {
+                    DoSwitchState(PlayerJumpState);
+                    return;
+                }
+
                 if (Player.IsRunning)
                     DoSwitchState(PlayerRunState);
 
@@ -61,6 +68,12 @@ public class PlayerStateMachine : MonoBehaviour
 
     public void DoFootCheck(PlayerStateMachine stateMachine)
     {
+        if (Player.Animator == null)
+            return;
+
+        if (!Player.Animator.isHuman)
+            return;
+
         if (leftFoot is null || leftFoot is null)
         {
             leftFoot = stateMachine.Player.Animator.GetBoneTransform(HumanBodyBones.LeftFoot);

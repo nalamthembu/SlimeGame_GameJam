@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 471321619}
-  distanceFromTarget: 0
+  distanceFromTarget: 7
   mouseSensitivity: 10
   pitchMinMax: {x: -40, y: 85}
 --- !u!81 &1329364160
