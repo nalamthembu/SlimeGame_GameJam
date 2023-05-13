@@ -74,6 +74,7 @@ MonoBehaviour:
   health: 100
   armour: 0
   damageAmount: 1
+  attackRate: 0.1
 --- !u!135 &1591391784205943261
 SphereCollider:
   m_ObjectHideFlags: 0
