@@ -20624,7 +20624,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2731922800692465801, guid: 86effcf8f80b7154fbd0222e2604aa61, type: 3}
       propertyPath: walkSpeed
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2731922800692465801, guid: 86effcf8f80b7154fbd0222e2604aa61, type: 3}
       propertyPath: m_JumpHeight
@@ -20682,6 +20682,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main_Character
       objectReference: {fileID: 0}
+    - target: {fileID: 8295943308448777642, guid: 86effcf8f80b7154fbd0222e2604aa61, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 0ed227fd60b3c4946a86dc4a0451bddf, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86effcf8f80b7154fbd0222e2604aa61, type: 3}
 --- !u!65 &2521405866907250157
