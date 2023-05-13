@@ -30,7 +30,6 @@ public class Player : Character
     bool m_IsRU;
     bool m_IsLU;
     bool m_IsRunning;
-    bool m_IsGrounded;
     bool m_IsJumping;
 
     Vector2 m_Input;
@@ -54,12 +53,12 @@ public class Player : Character
     public float Gravity { get { return m_Gravity; } }
     public Vector3 Velocity { get { return m_Velocity; } set { m_Velocity = value; } }
     public Vector2 InputDir { get { return m_InputDir; } }
-    public Vector2 CameraPitchYaw { get { return new Vector2(m_CameraController.Pitch, m_CameraController.Yaw); } }
+    public Vector2 CameraPitchYaw { get { return new Vector2(m_CameraController.Pitch, m_CameraController.yaw); } }
     public bool IsRU { get { return m_IsRU; } set { m_IsRU = value; } }
     public bool IsLU { get { return m_IsLU; } set { m_IsLU = value; } }
     public bool IsRotatingTowardTargetRot { get { return m_IsRotatingToTargetDirection; } set { m_IsRotatingToTargetDirection = value; } }
     public bool IsRunning { get { return m_IsRunning; } }
-    public bool IsGrounded { get { return m_IsGrounded; } }
+    
     public bool IsJumping { get { return m_IsJumping; } }
     public CharacterController Controller { get { return m_Controller; } }
     public Transform MainCamera { get { return m_MainCamera; } }
@@ -94,14 +93,7 @@ public class Player : Character
         m_IsRunning = Input.GetKey(KeyCode.LeftShift);
     }
 
-    private void HandleGroundCheck()
-    {
-        m_IsGrounded = Physics.Linecast(transform.position + Vector3.up * 0.1F, transform.position + Vector3.down * 5, out RaycastHit hit) && hit.distance <= 0.5F;
-
-        if (m_IsGrounded)
-            Debug.DrawLine(transform.position + Vector3.up * 0.1F, hit.point, Color.green);
-    }
-
+    
     public float GetModifiedSmoothTime(float smoothTime)
     {
         if (m_Controller.isGrounded)

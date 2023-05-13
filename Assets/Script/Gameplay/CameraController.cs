@@ -15,11 +15,11 @@ public class CameraController : MonoBehaviour
     public Vector2 pitchMinMax = new(-40, 85);
 
     public float Pitch { get; private set; }
-    public float Yaw { get; private set; }
+    public float yaw { get; private set; }
 
     private void HandleInput()
     {
-        Yaw += Input.GetAxisRaw("Mouse X") * mouseSensitivity;
+        yaw += Input.GetAxisRaw("Mouse X") * mouseSensitivity;
         Pitch -= Input.GetAxisRaw("Mouse Y") * mouseSensitivity;
 
         Pitch = Mathf.Clamp(Pitch, pitchMinMax.x, pitchMinMax.y);
@@ -29,7 +29,7 @@ public class CameraController : MonoBehaviour
 
     private void LateUpdate()
     {
-        Vector3 desiredRotation = new(Pitch, Yaw);
+        Vector3 desiredRotation = new(Pitch, yaw);
         transform.eulerAngles = desiredRotation;
 
         transform.position = target.position - transform.forward * distanceFromTarget;

@@ -33,7 +33,7 @@ Shader "Unlit/Cel_Shader"
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-            #pragma multi_compile
+            #pragma multi_compile_prepassfinal 
             // make fog work
             #pragma multi_compile_fog
             
