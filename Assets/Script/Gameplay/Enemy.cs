@@ -12,7 +12,7 @@ public class Enemy : Character
     public NavMeshAgent Agent { get; private set; }
 
     [SerializeField][Range(1, 100)] float attackRate = 0.1F;
-    private float timerToAttack;
+    private float timeToAttack;
 
     private void Start()
     {
@@ -25,7 +25,6 @@ public class Enemy : Character
     private void FindPlayer() => agent.SetDestination(player.transform.position);
 
     float timer = 0;
-    float attackTimer = 0;
 
     private void Update()
     {
@@ -58,12 +57,12 @@ public class Enemy : Character
 
             print(character.transform.name);
 
-            timerToAttack += Time.deltaTime;
+            timeToAttack += Time.deltaTime;
 
-            if (timerToAttack >= attackRate)
+            if (timeToAttack >= attackRate)
             {
                 Attack(character);
-                timerToAttack = 0;
+                timeToAttack = 0;
             }
         }
     }
