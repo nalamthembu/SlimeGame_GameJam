@@ -20,14 +20,14 @@ public class Slime_Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemy")
+        if (other.GetComponent<Enemy>())
         {
-            Destroy(gameObject);
+            Exploud();
         }
     }
 
@@ -48,6 +48,7 @@ public class Slime_Projectile : MonoBehaviour
         }
        
     }
+    
     private void ChangeColour()
     {
 
