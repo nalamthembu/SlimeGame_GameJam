@@ -219,6 +219,27 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6.3804836, y: 0.28542784, z: 3.7638524}
   m_Center: {x: -0.0029360058, y: 0.0050992435, z: -0.008316934}
+--- !u!1 &28884315 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4457022598027591936, guid: 24cc8e0f1f0c39a4f8cb44450c2a445d, type: 3}
+  m_PrefabInstance: {fileID: 2683128771364484096}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &28884320
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28884315}
+  serializedVersion: 2
+  m_Mass: 5
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &41807634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21114,6 +21135,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4206959178917426638, guid: 24cc8e0f1f0c39a4f8cb44450c2a445d, type: 3}
+      propertyPath: force.z
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206959178917426638, guid: 24cc8e0f1f0c39a4f8cb44450c2a445d, type: 3}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 6411407787543552969, guid: 2a0106ac39892a1428fc4bc31e523a41, type: 3}
     - target: {fileID: 4457022598027591936, guid: 24cc8e0f1f0c39a4f8cb44450c2a445d, type: 3}
       propertyPath: m_Name
       value: Slime_Projectile
@@ -21132,7 +21161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4898166702311733595, guid: 24cc8e0f1f0c39a4f8cb44450c2a445d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -39.84
+      value: -39.9
       objectReference: {fileID: 0}
     - target: {fileID: 4898166702311733595, guid: 24cc8e0f1f0c39a4f8cb44450c2a445d, type: 3}
       propertyPath: m_LocalRotation.w
