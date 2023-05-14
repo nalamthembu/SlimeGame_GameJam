@@ -9,6 +9,11 @@ public class CompassHandler : MonoBehaviour
     Vector3 startPosition;
     float rationAngleToPixel;
 
+    private void Awake()
+    {
+        target = FindObjectOfType<Player>().gameObject;
+    }
+
     void Start()
     {
         startPosition = transform.position;

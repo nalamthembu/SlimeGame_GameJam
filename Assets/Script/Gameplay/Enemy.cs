@@ -17,6 +17,7 @@ public class Enemy : Character
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        Agent = agent;
         player = FindObjectOfType<Player>();
 
         FindPlayer();

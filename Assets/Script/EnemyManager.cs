@@ -3,16 +3,18 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    List<Enemy> enemies = new();
+    readonly List<Enemy> enemies = new();
 
     [SerializeField] private GameObject enemyPrefab;
 
+    [SerializeField] private GameObject worldSpaceInfoIndicatorPrefab;
+
     [SerializeField] Vector2 SpawnBounds;
 
-    private void Awake()
+    private void Start()
     {
         //Start with 3 enemies.
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 4; i++)
         {
             AddNewEnemy();
         }
@@ -30,6 +32,14 @@ public class EnemyManager : MonoBehaviour
         GameObject spawnedEnemy = Instantiate(enemyPrefab, pos, Quaternion.identity);
 
         Enemy enemy = spawnedEnemy.GetComponent<Enemy>();
+
+        GameObject indicator = Instantiate(worldSpaceInfoIndicatorPrefab, pos, Quaternion.identity);
+
+        indicator.name = "ENEMY[" + enemies.Count + "]";
+
+        WorldSpaceEnemyUI uiElement = indicator.GetComponent<WorldSpaceEnemyUI>();
+
+        uiElement.LinkEnemy(enemy);
 
         enemies.Add(enemy);
     }
