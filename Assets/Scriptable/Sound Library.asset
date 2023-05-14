@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Sound Library
   m_EditorClassIdentifier: 
   sounds: []
+  mixers: []
