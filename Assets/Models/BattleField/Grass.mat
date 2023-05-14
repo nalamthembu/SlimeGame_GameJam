@@ -79,9 +79,9 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _AmbientColour: {r: 0.5904468, g: 1, b: 0, a: 1}
-    - _Color: {r: 0.07109656, g: 0.735849, b: 0, a: 1}
+    - _Color: {r: 0.18625218, g: 0.7372549, b: 0, a: 1}
     - _Colour: {r: 0.053801928, g: 0.3962264, b: 0, a: 0.5}
-    - _EmissionColor: {r: 0.43126687, g: 0.6037736, b: 0, a: 1}
+    - _EmissionColor: {r: 0.49101225, g: 0.69372374, b: 0, a: 1}
     - _RimColor: {r: 0.12152922, g: 1, b: 0, a: 1}
     - _SpecularColor: {r: 0.06308687, g: 0.3773585, b: 0.023139918, a: 1}
   m_BuildTextureStacks: []

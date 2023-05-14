@@ -55,6 +55,7 @@ public class PlayerJumpState : PlayerBaseState
 
         //Do a check to see which foot the character jumped off.
         stateMachine.DoFootCheck(stateMachine);
+
     }
 
 
@@ -160,6 +161,7 @@ public class PlayerLandState : PlayerBaseState
     public override void EnterState(PlayerStateMachine stateMachine)
     {
         stateMachine.DoFootCheck(stateMachine);
+  
     }
 
     public override void ExitState(PlayerStateMachine stateMachine)

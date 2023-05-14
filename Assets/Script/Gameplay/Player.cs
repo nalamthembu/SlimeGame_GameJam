@@ -80,6 +80,7 @@ public class Player : Character
     {
         HandleInput();
         HandleGroundCheck();
+        Animate();
     }
 
     private void HandleInput()
@@ -103,5 +104,10 @@ public class Player : Character
             return float.MaxValue;
 
         return smoothTime / m_AirControlValue;
+    }
+    private void Animate()
+    {
+        Animator.SetBool("IsJumping",m_IsJumping);
+        Animator.SetBool("IsGrounded", IsGrounded);
     }
 }

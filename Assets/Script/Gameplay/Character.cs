@@ -11,7 +11,10 @@ public class Character : MonoBehaviour
     bool m_IsGrounded;
 
     protected Animator m_Animator;
-    public Animator Animator { get; private set; }
+    public Animator Animator 
+    {
+        get { return m_Animator; }
+    }
     public bool IsGrounded { get { return m_IsGrounded; } }
     public float Health
     {
