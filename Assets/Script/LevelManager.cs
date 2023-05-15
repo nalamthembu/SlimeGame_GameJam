@@ -32,10 +32,10 @@ public class LevelManager : MonoBehaviour
     IEnumerator LoadAsynchronously(int sceneIndex)
     {
         UIManager.instance.FadeScreenToBlack();
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
         loadingScreen.SetActive(true);
         UIManager.instance.FadeScreenToClear();
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
 
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
 

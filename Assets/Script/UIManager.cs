@@ -15,17 +15,21 @@ public class UIManager : MonoBehaviour
         if (instance is null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
+        {
+            Destroy(gameObject);
             return;
-
-        DontDestroyOnLoad(gameObject);
-
+        }
     }
 
     public void PromptMainMenu() => m_MainMenuPrompt.SetActive(true);
 
     public void PromptExit() => m_ExitPrompt.SetActive(true);
+
+    public void ShowPauseMenu() => m_PauseMenu.SetActive(true);
+    public void HidePauseMenu() => m_PauseMenu.SetActive(false);
 
     #region METHODS_AND_BOILER
     public void FadeScreenToBlack()

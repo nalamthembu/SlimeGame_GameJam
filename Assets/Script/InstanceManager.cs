@@ -23,4 +23,9 @@ public class InstanceManager : MonoBehaviour
     public void LoadScene(int sceneIndex) => LevelManager.instance.LoadScene(sceneIndex);
     public void PromptMainMenu() => UIManager.instance.PromptMainMenu();
     public void PromptExit() => UIManager.instance.PromptExit();
+    public void PauseGame() => GameManager.instance.PauseGame();
+    public void ResumeGame() => GameManager.instance.ResumeGame();
+    public void ShowPauseMenu() => UIManager.instance.ShowPauseMenu();
+    public void HidePauseMenu() => UIManager.instance.HidePauseMenu();
+    public void ForceUnPause() => GameManager.instance.ForceUnPause();
 }
