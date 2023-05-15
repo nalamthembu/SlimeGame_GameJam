@@ -64,15 +64,14 @@ public class EnemyManager : MonoBehaviour
 
     public void KillEnemy(Enemy e)
     {
-        for(int i = 0; i < worldSpaceIndicators.Count; i++)
+        for (int i = 0; i < worldSpaceIndicators.Count; i++)
         {
             if (worldSpaceIndicators[i].LinkedEnemy == e)
             {
                 Destroy(worldSpaceIndicators[i].gameObject);
                 worldSpaceIndicators.Remove(worldSpaceIndicators[i]);
-
-                for (int x = 0; x < 3; x++)
-                    AddNewEnemy();
+                HUDManager.instance.AddToKillCount();
+                AddNewEnemy();
             }
         }
 

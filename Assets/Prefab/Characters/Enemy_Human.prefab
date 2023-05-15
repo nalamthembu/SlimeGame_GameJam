@@ -2536,7 +2536,7 @@ MonoBehaviour:
   health: 100
   armour: 0
   damageAmount: 1
-  attackRate: 1
+  attackRate: 2
 --- !u!65 &2540846546729179073
 BoxCollider:
   m_ObjectHideFlags: 0

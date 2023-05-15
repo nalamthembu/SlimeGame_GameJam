@@ -12,10 +12,11 @@ public class Enemy : Character
     public NavMeshAgent Agent { get; private set; }
 
     [SerializeField][Range(1, 100)] float attackRate = 1F;
-    private float timeToAttack;
+    private float nextTimeToAttack;
 
     public bool IsAttacking { get; private set; }
 
+    
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -50,6 +51,8 @@ public class Enemy : Character
         }
         else
         {
+
+
             Agent.isStopped = true;
             PlayDeathSound();
             EnemyManager.instance.KillEnemy(this);
@@ -77,15 +80,14 @@ public class Enemy : Character
 
             print(character.transform.name);
 
-            timeToAttack += Time.deltaTime;
-
             agent.isStopped = true;
 
-            if (timeToAttack >= attackRate)
+            if (Time.time >= nextTimeToAttack)
             {
+                nextTimeToAttack = Time.time + 1 / attackRate;
+                
                 Attack(character);
                 IsAttacking = true;
-                timeToAttack = 0;
             }
             else
             {

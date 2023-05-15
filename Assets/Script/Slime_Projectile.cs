@@ -25,13 +25,11 @@ public class Slime_Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        RaycastHit[] hits  = Physics.SphereCastAll(other.transform.position, 10, transform.forward, 10);
+        Collider[] colliders = Physics.OverlapSphere(other.transform.position, 10);
 
-        foreach (RaycastHit h in hits)
+        foreach (Collider c in colliders)
         {
-            Enemy e = h.collider.GetComponent<Enemy>();
-
-            
+            Enemy e = c.GetComponent<Enemy>();
 
             if (e)
             {

@@ -9,10 +9,22 @@ public class HUDManager : MonoBehaviour
     [SerializeField] TMP_Text KillCountText;
     [SerializeField] TMP_Text HealthBarText;
 
+    public static HUDManager instance;
+
+    int killCount;
     Player Player;
 
     private void Awake()
     {
+        if (instance is null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         Player = FindObjectOfType<Player>();
     }
 
@@ -29,8 +41,9 @@ public class HUDManager : MonoBehaviour
         //Mega Jump Bar
     }
 
-    public void SetKillCount(int count)
+    public void AddToKillCount()
     {
-        KillCountText.text = "" + count;
+        killCount++;
+        KillCountText.text = "" + killCount;
     }
 }
