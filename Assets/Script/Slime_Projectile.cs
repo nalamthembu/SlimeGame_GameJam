@@ -14,7 +14,7 @@ public class Slime_Projectile : MonoBehaviour
     void Start()
     {
         Rigidbody rigidBody = GetComponent<Rigidbody>();
-        rigidBody.AddForce(force, ForceMode.Impulse);
+        rigidBody.AddForce(transform.forward*force.z, ForceMode.Impulse);
     }
 
     // Update is called once per frame
@@ -39,7 +39,7 @@ public class Slime_Projectile : MonoBehaviour
         {
             Bounces++;
             ChangeColour();
-            gameObject.transform.localScale *= 1.1f;
+            gameObject.transform.localScale *= 1.3f;
 
             if(Bounces >= 10)
             {

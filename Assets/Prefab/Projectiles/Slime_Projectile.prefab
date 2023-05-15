@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27e37e87b8b5f88439cf0f2c5e2b8594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: {x: 0, y: 0, z: 20}
+  force: {x: 0, y: 0, z: 200}
   explosion: {fileID: 6411407787543552969, guid: 2a0106ac39892a1428fc4bc31e523a41, type: 3}
 --- !u!54 &28884320
 Rigidbody:

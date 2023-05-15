@@ -23,7 +23,7 @@ public class AimToCrosshair : MonoBehaviour
         {
             Vector3 aimDir = (testAiming.position - SpawnPoint.position).normalized;
             GameObject projectile = Instantiate(Slime_Projectile, SpawnPoint.position, Quaternion.LookRotation(aimDir, Vector3.down));
-            projectile.GetComponent<Slime_Projectile>().force = aimDir;
+            //projectile.GetComponent<Slime_Projectile>().force = aimDir;
 
         }
     }
