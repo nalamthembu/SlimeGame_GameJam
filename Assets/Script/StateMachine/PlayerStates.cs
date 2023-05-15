@@ -206,6 +206,8 @@ public class PlayerStopState : PlayerBaseState
 {
     Player player;
 
+    float momentumMagnitude;
+
     public override void CheckStateChange(PlayerStateMachine stateMachine)
     {
         stateMachine.DoStateCheck();
@@ -214,6 +216,7 @@ public class PlayerStopState : PlayerBaseState
     public override void EnterState(PlayerStateMachine stateMachine)
     {
         player = stateMachine.Player;
+        momentumMagnitude = player.Velocity.magnitude;
     }
 
     public override void ExitState(PlayerStateMachine stateMachine)

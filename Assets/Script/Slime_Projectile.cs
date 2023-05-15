@@ -25,6 +25,21 @@ public class Slime_Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        RaycastHit[] hits  = Physics.SphereCastAll(other.transform.position, 10, transform.forward, 10);
+
+        foreach (RaycastHit h in hits)
+        {
+            Enemy e = h.collider.GetComponent<Enemy>();
+
+            
+
+            if (e)
+            {
+                print(e.name);
+                e.TakeDamage(100);
+            }
+        }
+
         if (other.GetComponent<Enemy>())
         {
             Exploud();
@@ -63,6 +78,7 @@ public class Slime_Projectile : MonoBehaviour
         ParticleSystem parts = Explos.GetComponentInChildren<ParticleSystem>();
         parts.startSize *= Bounces * 10;
         parts.startColor = ExplosColour;
+
         Destroy(Explos,4);
         Destroy(gameObject);
         

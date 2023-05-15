@@ -70,9 +70,12 @@ public class EnemyManager : MonoBehaviour
             {
                 Destroy(worldSpaceIndicators[i].gameObject);
                 worldSpaceIndicators.Remove(worldSpaceIndicators[i]);
+
+                for (int x = 0; x < 3; x++)
+                    AddNewEnemy();
             }
         }
 
-        Destroy(e.gameObject);
+        Destroy(e.gameObject, 10);
     }
 }

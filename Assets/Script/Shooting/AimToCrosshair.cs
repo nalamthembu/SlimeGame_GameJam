@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AimToCrosshair : MonoBehaviour
@@ -19,7 +17,7 @@ public class AimToCrosshair : MonoBehaviour
             testAiming.position = rayCast.point;
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetMouseButtonDown(0) && Input.GetMouseButton(1) != true) //IF SHOOTING FROM THE HIP.
         {
             Vector3 aimDir = (testAiming.position - SpawnPoint.position).normalized;
             GameObject projectile = Instantiate(Slime_Projectile, SpawnPoint.position, Quaternion.LookRotation(aimDir, Vector3.down));

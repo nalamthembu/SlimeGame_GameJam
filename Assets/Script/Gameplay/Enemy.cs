@@ -11,19 +11,26 @@ public class Enemy : Character
 
     public NavMeshAgent Agent { get; private set; }
 
-    [SerializeField][Range(1, 100)] float attackRate = 0.1F;
+    [SerializeField][Range(1, 100)] float attackRate = 1F;
     private float timeToAttack;
+
+    public bool IsAttacking { get; private set; }
 
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         Agent = agent;
         player = FindObjectOfType<Player>();
-
+        m_Animator = GetComponent<Animator>();
         FindPlayer();
     }
 
-    private void FindPlayer() => agent.SetDestination(player.transform.position);
+    private void FindPlayer()
+    {
+        if (agent.isStopped)
+            agent.isStopped = false;
+        agent.SetDestination(player.transform.position);
+    }
 
     float timer = 0;
 
@@ -35,6 +42,7 @@ public class Enemy : Character
 
             if (timer >= 1)
             {
+                if (agent.remainingDistance > agent.stoppingDistance)
                 FindPlayer();
 
                 timer = 0;
@@ -42,6 +50,7 @@ public class Enemy : Character
         }
         else
         {
+            Agent.isStopped = true;
             PlayDeathSound();
             EnemyManager.instance.KillEnemy(this);
         }
@@ -70,10 +79,17 @@ public class Enemy : Character
 
             timeToAttack += Time.deltaTime;
 
+            agent.isStopped = true;
+
             if (timeToAttack >= attackRate)
             {
                 Attack(character);
+                IsAttacking = true;
                 timeToAttack = 0;
+            }
+            else
+            {
+                IsAttacking = false;
             }
         }
     }
