@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
@@ -30,29 +31,30 @@ public class LevelManager : MonoBehaviour
 
     IEnumerator LoadAsynchronously(int sceneIndex)
     {
-        UI_MANAGER.FadeScreenToBlack();
-        yield return new WaitForSeconds(2);
-        m_LoadingScreen.SetActive(true);
-        UI_MANAGER.FadeScreenToClear();
+        UIManager.instance.FadeScreenToBlack();
+        yield return new WaitForSeconds(5);
+        loadingScreen.SetActive(true);
+        UIManager.instance.FadeScreenToClear();
+        yield return new WaitForSeconds(5);
 
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
 
         while (!operation.isDone)
         {
             float progress = Mathf.Clamp01(operation.progress / .9f);
-            m_LoadingBar.value = progress;
+            loadingBar.value = progress;
             yield return null;
         }
 
         yield return new WaitForSeconds(2);
 
-        UI_MANAGER.CutToBlack();
+        UIManager.instance.CutToBlack();
 
-        m_LoadingScreen.SetActive(false);
+        loadingScreen.SetActive(false);
 
         yield return new WaitForSeconds(1);
 
-        UI_MANAGER.FadeScreenToClear();
+        UIManager.instance.FadeScreenToClear();
 
     }
 }
