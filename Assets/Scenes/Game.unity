@@ -355,7 +355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 7025438790178391341, guid: 4d08182be03de07498d192b5b674eb22, type: 3}
   worldSpaceInfoIndicatorPrefab: {fileID: 8562331942648788455, guid: 72efbf484a191c7428592bb2a415c7ac, type: 3}
-  SpawnBounds: {x: 10, y: 10}
+  SpawnBounds: {x: 50, y: 50}
 --- !u!4 &42978461
 Transform:
   m_ObjectHideFlags: 0
@@ -21283,7 +21283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2847038055265052392, guid: 86effcf8f80b7154fbd0222e2604aa61, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.29
       objectReference: {fileID: 0}
     - target: {fileID: 2847038055265052392, guid: 86effcf8f80b7154fbd0222e2604aa61, type: 3}
       propertyPath: m_LocalPosition.z

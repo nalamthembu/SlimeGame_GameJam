@@ -8,11 +8,14 @@ public class Slime_Projectile : MonoBehaviour
     private int Bounces = 0;
     public GameObject explosion;
 
+    public Collider colider;
+
     private Color ExplosColour;
 
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(GoThrough());
         Rigidbody rigidBody = GetComponent<Rigidbody>();
         rigidBody.AddForce(transform.forward*force.z, ForceMode.Impulse);
     }
@@ -60,6 +63,13 @@ public class Slime_Projectile : MonoBehaviour
             }
         }
        
+    }
+
+    public IEnumerator GoThrough()
+    {
+        colider.enabled =false;
+        yield return new WaitForSeconds(0.1f);
+        colider.enabled = true;
     }
     
     private void ChangeColour()

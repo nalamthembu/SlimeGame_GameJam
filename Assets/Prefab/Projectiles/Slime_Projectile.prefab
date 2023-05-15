@@ -114,6 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: {x: 0, y: 0, z: 200}
   explosion: {fileID: 6411407787543552969, guid: 2a0106ac39892a1428fc4bc31e523a41, type: 3}
+  colider: {fileID: 6793105430441524241}
 --- !u!54 &28884320
 Rigidbody:
   m_ObjectHideFlags: 0
