@@ -355,7 +355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 7025438790178391341, guid: 4d08182be03de07498d192b5b674eb22, type: 3}
   worldSpaceInfoIndicatorPrefab: {fileID: 8562331942648788455, guid: 72efbf484a191c7428592bb2a415c7ac, type: 3}
-  SpawnBounds: {x: 50, y: 50}
+  SpawnBounds: {x: 100, y: 100}
 --- !u!4 &42978461
 Transform:
   m_ObjectHideFlags: 0
