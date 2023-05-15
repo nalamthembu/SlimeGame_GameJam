@@ -6,9 +6,9 @@ public class WorldSpaceEnemyUI : MonoBehaviour
     new Camera camera;
     [SerializeField] private Slider worldSpaceHPBar;
 
-    private Enemy linkedEnemy;
-
     private const string WORLD_SPACE_CANVAS = "CANVAS_WORLD_SPACE";
+
+    public Enemy LinkedEnemy { get; private set; }
 
     private void Start()
     {
@@ -19,10 +19,13 @@ public class WorldSpaceEnemyUI : MonoBehaviour
 
     private void LateUpdate()
     {
-        worldSpaceHPBar.value = linkedEnemy.Health;
-        worldSpaceHPBar.transform.position = linkedEnemy.transform.position + Vector3.up * (linkedEnemy.Agent.height + 0.25F); //slightly above enemy.
+        worldSpaceHPBar.value = LinkedEnemy.Health;
+        worldSpaceHPBar.transform.position = LinkedEnemy.transform.position + Vector3.up * (LinkedEnemy.Agent.height + 0.25F); //slightly above enemy.
         worldSpaceHPBar.transform.LookAt(camera.transform);
     }
 
-    public void LinkEnemy(Enemy enemy) => linkedEnemy = enemy;
+    public void LinkEnemy(Enemy enemy)
+    {
+        LinkedEnemy = enemy;
+    }
 }

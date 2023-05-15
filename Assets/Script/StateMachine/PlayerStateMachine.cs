@@ -121,13 +121,16 @@ public class PlayerStateMachine : MonoBehaviour
             );
 
         Player.VelocityY += Time.deltaTime * Player.Gravity;
-        Player.Velocity = (Player.transform.forward * Player.CurrentSpeed) + Vector3.up * Player.VelocityY;
+
+        Vector3 aimingMovement = Player.transform.right * Player.InputDir.x + Player.transform.forward * Player.InputDir.y;
+
+        Player.Velocity = (Player.IsAiming ? aimingMovement * Player.CurrentSpeed : Player.transform.forward * Player.CurrentSpeed) + Vector3.up * Player.VelocityY;
         Player.Controller.Move(Player.Velocity * Time.deltaTime);
     }
     public void HandleRotation()
     {
-        Player.TargetRotation = Mathf.Atan2(Player.InputDir.x, Player.InputDir.y) *
-            Mathf.Rad2Deg + Player.MainCamera.eulerAngles.y;
+        Player.TargetRotation = (Player.IsAiming) ? Player.MainCamera.eulerAngles.y : 
+            Mathf.Atan2(Player.InputDir.x, Player.InputDir.y) * Mathf.Rad2Deg + Player.MainCamera.eulerAngles.y;
 
         Player.transform.eulerAngles = Vector3.up *
             Mathf.SmoothDampAngle

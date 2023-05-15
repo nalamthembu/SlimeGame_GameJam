@@ -40,6 +40,16 @@ public class Enemy : Character
                 timer = 0;
             }
         }
+        else
+        {
+            PlayDeathSound();
+            EnemyManager.instance.KillEnemy(this);
+        }
+    }
+
+    private void PlayDeathSound()
+    {
+        print("Player Death Sound");
     }
 
     private void Attack(Character characterToAttack)

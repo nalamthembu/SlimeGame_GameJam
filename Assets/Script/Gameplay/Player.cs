@@ -31,6 +31,9 @@ public class Player : Character
     bool m_IsLU;
     bool m_IsRunning;
     bool m_IsJumping;
+    bool m_IsAiming;
+    bool m_IsShooting;
+    bool m_SwappedShoulders;
 
     Vector2 m_Input;
     Vector2 m_InputDir;
@@ -58,8 +61,10 @@ public class Player : Character
     public bool IsLU { get { return m_IsLU; } set { m_IsLU = value; } }
     public bool IsRotatingTowardTargetRot { get { return m_IsRotatingToTargetDirection; } set { m_IsRotatingToTargetDirection = value; } }
     public bool IsRunning { get { return m_IsRunning; } }
-    
+    public bool IsAiming { get {return m_IsAiming; } }
+    public bool IsShooting { get { return m_IsShooting; } }
     public bool IsJumping { get { return m_IsJumping; } }
+    public bool SwappedShoulders { get { return m_SwappedShoulders; } }
     public CharacterController Controller { get { return m_Controller; } }
     public Transform MainCamera { get { return m_MainCamera; } }
 
@@ -92,6 +97,11 @@ public class Player : Character
         m_InputDir = m_Input.normalized;
         m_InputMagnitude = m_InputDir.magnitude; //Input Magnitude is any movement input from the player.
         m_IsRunning = Input.GetKey(KeyCode.LeftShift);
+        m_IsAiming = Input.GetMouseButton(1);
+        m_IsShooting = Input.GetMouseButton(0);
+
+        if (Input.GetKeyDown(KeyCode.Q))
+            m_SwappedShoulders = !m_SwappedShoulders;
     }
 
     

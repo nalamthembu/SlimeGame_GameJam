@@ -3,13 +3,29 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
+    public static EnemyManager instance;
+
     readonly List<Enemy> enemies = new();
+
+    readonly List<WorldSpaceEnemyUI> worldSpaceIndicators = new();
 
     [SerializeField] private GameObject enemyPrefab;
 
     [SerializeField] private GameObject worldSpaceInfoIndicatorPrefab;
 
     [SerializeField] Vector2 SpawnBounds;
+
+    private void Awake()
+    {
+        if (instance is null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void Start()
     {
@@ -39,8 +55,24 @@ public class EnemyManager : MonoBehaviour
 
         WorldSpaceEnemyUI uiElement = indicator.GetComponent<WorldSpaceEnemyUI>();
 
+        worldSpaceIndicators.Add(uiElement);
+
         uiElement.LinkEnemy(enemy);
 
         enemies.Add(enemy);
+    }
+
+    public void KillEnemy(Enemy e)
+    {
+        for(int i = 0; i < worldSpaceIndicators.Count; i++)
+        {
+            if (worldSpaceIndicators[i].LinkedEnemy == e)
+            {
+                Destroy(worldSpaceIndicators[i].gameObject);
+                worldSpaceIndicators.Remove(worldSpaceIndicators[i]);
+            }
+        }
+
+        Destroy(e.gameObject);
     }
 }
